@@ -22,3 +22,25 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+from datetime import date
+
+# print(sys.argv)
+
+# print(f'length of argv  {len(sys.argv)}')
+
+global daty
+
+daty = date.today()
+
+daty = str(daty).split('-')
+
+# print(daty)
+
+if len(sys.argv)==1 :
+  print(calendar.monthcalendar(int(daty[0]),int(daty[1])))
+elif len(sys.argv) == 2:
+  print(calendar.monthcalendar(int(daty[0]),int(sys.argv[1])))  
+elif len(sys.argv) == 3:
+  print(calendar.monthcalendar(int(sys.argv[2]),int(sys.argv[1]))) 
+else:
+  print('please enter the current month and/or the year respectively') 
